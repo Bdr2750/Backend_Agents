@@ -3,9 +3,9 @@ import logging
 
 from fastapi import APIRouter
 from pydantic import BaseModel
-from board.models import Task
+from board.models import Task, AgentId, TaskStatus
 from board.state import BoardState
-from agents.prompts import FOLLOWUP_CLASSIFIER_PROMPT
+from agents.prompts import FOLLOWUP_CLASSIFIER_PROMPT, HOST_SYSTEM_PROMPT
 
 logger = logging.getLogger(__name__)
 
@@ -158,22 +158,58 @@ async def chat(body: ChatMessage):
             await board.add_task(task)
             return {"status": "constraint_followup", "expression": expression, "classification": classification}
         else:
-            # FUNDAMENTAL CHANGE → Full re-run with context
-            # Only cancel NEEDED/IN_PROGRESS; keep DONE tasks so frontend shows old data
-            # until new results replace them in real time
+            # FUNDAMENTAL CHANGE → Re-parse need/persona silently (no Host agent)
+            # then go straight to Options + Criteria
             await board.cancel_stale_tasks(f"User follow-up: {expression}")
             board.board.user_expression = expression
 
-            task = Task(
-                type="translate_need",
-                input_data={
-                    "user_expression": expression,
-                    "previous_need": previous_need,
-                    "previous_persona": previous_persona,
-                    "is_followup": True,
-                },
+            gemini = get_gemini()
+            user_message = (
+                f"CONTEXT: This is a follow-up message. The user previously expressed a need that was analyzed as:\n"
+                f"{json.dumps(previous_need, indent=2)}\n\n"
+                f"Their persona was:\n{json.dumps(previous_persona, indent=2)}\n\n"
+                f"NOW the user says: \"{expression}\"\n\n"
+                f"Update the structured need and persona based on this new input. "
+                f"Keep what's still relevant, modify what changed."
             )
-            await board.add_task(task)
+            response = await gemini.generate(
+                system_prompt=HOST_SYSTEM_PROMPT,
+                user_message=user_message,
+            )
+            try:
+                parsed = json.loads(response)
+            except json.JSONDecodeError:
+                parsed = {}
+
+            need = parsed.get("structured_need", previous_need)
+            persona = parsed.get("persona", previous_persona)
+
+            # Store as a completed translate_need task so downstream agents can find it
+            host_task = Task(
+                type="translate_need",
+                created_by=AgentId.HOST,
+                input_data={"user_expression": expression},
+                output_data={"structured_need": need, "persona": persona},
+            )
+            host_task.status = TaskStatus.DONE
+            board.board.tasks.append(host_task)
+            await board.ws.broadcast_board_update(board.board)
+
+            # Directly create Options + Criteria tasks (skip Host agent)
+            options_task = Task(
+                type="generate_options",
+                created_by=AgentId.HOST,
+                input_data={"structured_need": need, "persona": persona},
+            )
+            await board.add_task(options_task)
+
+            criteria_task = Task(
+                type="apply_criteria",
+                created_by=AgentId.HOST,
+                input_data={"structured_need": need, "persona": persona},
+            )
+            await board.add_task(criteria_task)
+
             return {"status": "fundamental_followup", "expression": expression, "classification": classification}
     else:
         # First message: fresh start
