@@ -1,0 +1,287 @@
+INFO:     Will watch for changes in these directories: ['/Users/badrbouchabchoub/DEV_Local/AgentCLassAMGEN/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [74603] using WatchFiles
+INFO:     Started server process [74667]
+INFO:     Waiting for application startup.
+2026-02-27 12:28:07,373 [agents.base] INFO: Agent host started
+2026-02-27 12:28:07,373 [agents.base] INFO: Agent options started
+2026-02-27 12:28:07,373 [agents.base] INFO: Agent criteria started
+2026-02-27 12:28:07,373 [agents.base] INFO: Agent result started
+2026-02-27 12:28:07,373 [agents.base] INFO: Agent plan_b started
+2026-02-27 12:28:07,373 [agents.registry] INFO: All 5 agents started
+2026-02-27 12:28:07,373 [main] INFO: AgentCLass system started
+INFO:     Application startup complete.
+INFO:     127.0.0.1:63588 - "WebSocket /ws" [accepted]
+2026-02-27 12:28:08,209 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:63591 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64512 - "WebSocket /ws" [accepted]
+2026-02-27 12:59:35,993 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:64515 - "WebSocket /ws" [accepted]
+2026-02-27 12:59:36,007 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 12:59:36,017 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64517 - "POST /api/board/reset HTTP/1.1" 200 OK
+2026-02-27 12:59:39,049 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64530 - "WebSocket /ws" [accepted]
+2026-02-27 12:59:45,720 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:64533 - "WebSocket /ws" [accepted]
+2026-02-27 12:59:45,738 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 12:59:45,867 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64535 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64645 - "WebSocket /ws" [accepted]
+2026-02-27 13:05:44,052 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:64648 - "WebSocket /ws" [accepted]
+2026-02-27 13:05:44,070 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:05:44,074 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64650 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64681 - "POST /api/chat HTTP/1.1" 200 OK
+2026-02-27 13:07:34,976 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:07:37,391 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:07:37,766 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:07:39,387 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:07:39,822 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:07:45,946 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:07:46,231 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:07:50,242 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:12:10,656 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64752 - "WebSocket /ws" [accepted]
+2026-02-27 13:12:10,880 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:64755 - "WebSocket /ws" [accepted]
+2026-02-27 13:12:10,892 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:12:10,894 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64757 - "POST /api/board/reset HTTP/1.1" 200 OK
+2026-02-27 13:14:58,070 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64804 - "WebSocket /ws" [accepted]
+2026-02-27 13:14:58,231 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:14:58,237 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64807 - "WebSocket /ws" [accepted]
+2026-02-27 13:14:58,240 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:64809 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64817 - "POST /api/chat HTTP/1.1" 200 OK
+2026-02-27 13:15:17,192 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:15:19,269 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:15:19,693 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:15:21,200 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:15:21,562 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:15:26,978 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:15:27,327 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:15:31,349 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:15:53,330 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64835 - "WebSocket /ws" [accepted]
+2026-02-27 13:15:53,546 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:15:53,552 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64838 - "WebSocket /ws" [accepted]
+2026-02-27 13:15:53,558 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:64840 - "POST /api/board/reset HTTP/1.1" 200 OK
+2026-02-27 13:15:56,227 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64845 - "WebSocket /ws" [accepted]
+2026-02-27 13:15:56,303 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:15:56,306 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64848 - "WebSocket /ws" [accepted]
+2026-02-27 13:15:56,316 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:64850 - "POST /api/board/reset HTTP/1.1" 200 OK
+2026-02-27 13:16:56,925 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64879 - "POST /api/chat HTTP/1.1" 200 OK
+2026-02-27 13:17:46,457 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:17:48,364 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:17:48,707 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:17:54,712 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:17:54,829 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:17:56,448 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:17:56,746 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:18:01,364 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:18:07,119 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64895 - "WebSocket /ws" [accepted]
+2026-02-27 13:18:07,215 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:18:07,220 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64898 - "WebSocket /ws" [accepted]
+2026-02-27 13:18:07,224 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:64900 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64927 - "POST /api/scenarios/grandmother HTTP/1.1" 200 OK
+2026-02-27 13:19:49,593 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:19:51,892 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:19:52,320 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:19:53,761 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:19:54,233 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:20:00,664 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:20:00,846 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:20:05,065 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:23:58,005 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64994 - "WebSocket /ws" [accepted]
+2026-02-27 13:23:58,189 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:64997 - "WebSocket /ws" [accepted]
+2026-02-27 13:23:58,197 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:23:58,199 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:64999 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65001 - "POST /api/scenarios/grandmother HTTP/1.1" 200 OK
+2026-02-27 13:23:59,215 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:24:01,403 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:24:01,734 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:24:07,653 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:24:08,071 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:24:09,631 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:24:09,999 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:24:13,999 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:65207 - "WebSocket /ws" [accepted]
+2026-02-27 13:38:16,487 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:65210 - "WebSocket /ws" [accepted]
+2026-02-27 13:38:16,542 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:38:16,547 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:65214 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65220 - "POST /api/scenarios/grandmother HTTP/1.1" 200 OK
+2026-02-27 13:38:37,123 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:38:39,915 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:38:39,949 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:38:45,675 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:38:46,401 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:38:48,039 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:38:48,568 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:38:53,178 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:65269 - "POST /api/scenarios/grandmother HTTP/1.1" 200 OK
+2026-02-27 13:41:38,671 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:41:40,920 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:41:41,109 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:41:45,020 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:65282 - "WebSocket /ws" [accepted]
+2026-02-27 13:41:45,309 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:65285 - "WebSocket /ws" [accepted]
+2026-02-27 13:41:45,323 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:41:45,333 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:65287 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65289 - "POST /api/scenarios/grandmother HTTP/1.1" 200 OK
+2026-02-27 13:41:46,889 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:41:47,001 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:41:49,142 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:41:49,342 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:41:50,993 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:41:51,597 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:41:56,526 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:41:57,098 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:42:01,225 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:51:37,842 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+2026-02-27 13:51:46,240 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:65455 - "WebSocket /ws" [accepted]
+2026-02-27 13:51:46,540 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:65456 - "WebSocket /ws" [accepted]
+2026-02-27 13:51:46,562 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:51:46,572 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:65458 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65460 - "POST /api/scenarios/grandmother HTTP/1.1" 200 OK
+2026-02-27 13:51:48,879 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:51:51,305 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:51:51,561 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:51:53,187 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:51:53,514 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:51:59,591 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:51:59,967 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 13:52:04,076 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 13:58:08,615 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+2026-02-27 13:58:08,704 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:49205 - "WebSocket /ws" [accepted]
+2026-02-27 13:58:08,884 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:49208 - "WebSocket /ws" [accepted]
+2026-02-27 13:58:08,897 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:58:08,901 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:49210 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49213 - "WebSocket /ws" [accepted]
+2026-02-27 13:58:08,932 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 13:58:08,949 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:49216 - "WebSocket /ws" [accepted]
+2026-02-27 13:58:08,952 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:49218 - "POST /api/board/reset HTTP/1.1" 200 OK
+2026-02-27 14:31:40,125 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:49736 - "WebSocket /ws" [accepted]
+2026-02-27 14:31:40,428 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:49737 - "WebSocket /ws" [accepted]
+2026-02-27 14:31:40,441 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 14:31:40,448 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:49739 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50764 - "POST /api/scenarios/grandmother HTTP/1.1" 200 OK
+2026-02-27 15:53:28,281 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 15:53:30,679 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 15:53:31,193 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 15:53:36,414 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 15:53:36,940 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 15:53:38,400 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 15:53:38,867 [google_genai.models] INFO: AFC is enabled with max remote calls: 10.
+2026-02-27 15:53:42,454 [httpx] INFO: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+2026-02-27 17:15:06,844 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+2026-02-27 17:15:07,022 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:51877 - "WebSocket /ws" [accepted]
+2026-02-27 17:15:08,462 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:51878 - "WebSocket /ws" [accepted]
+2026-02-27 17:15:08,524 [main] INFO: WebSocket client connected
+INFO:     connection open
+2026-02-27 17:15:08,544 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+INFO:     127.0.0.1:51881 - "POST /api/board/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51883 - "WebSocket /ws" [accepted]
+2026-02-27 17:15:08,572 [main] INFO: WebSocket client connected
+INFO:     connection open
+INFO:     127.0.0.1:51885 - "POST /api/board/reset HTTP/1.1" 200 OK
+2026-02-27 22:49:48,023 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
+2026-02-27 22:49:48,058 [main] INFO: WebSocket client disconnected
+INFO:     connection closed
