@@ -46,10 +46,9 @@ class PlanBAgent(BaseAgent):
         task.version = self.board.board.epoch
         # Broadcast so frontend sees Plan B as in_progress in the new epoch
         await self.board.ws.broadcast_board_update(self.board.board)
-        return {"disruption_analysis": analysis}
 
-    async def _post_act(self, task: Task, result: dict):
-        analysis = result["disruption_analysis"]
+        # ── Do ALL recalculation here so sub-tasks exist BEFORE this task completes ──
+
         new_constraints = analysis.get("new_constraints", {})
         original_need = task.input_data.get("original_need", {})
         persona = task.input_data.get("persona", {})
@@ -88,8 +87,6 @@ class PlanBAgent(BaseAgent):
             "analysis_summary": analysis.get("disruption_summary", ""),
             "analysis_explanation": analysis.get("explanation", ""),
         }
-
-        # ── Plan B does ALL recalculation itself (no other agents called) ──
 
         # 1. Recalculate Options
         await self._broadcast_thinking(
@@ -162,3 +159,5 @@ class PlanBAgent(BaseAgent):
             input_data={"options": options, "criteria": criteria_data},
         )
         await self.board.add_completed_task(result_task, {"recommendation": result_data})
+
+        return {"disruption_analysis": analysis}
