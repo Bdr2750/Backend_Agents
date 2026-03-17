@@ -227,10 +227,14 @@ class BoardState:
         task = self._get_task(task_id)
         return task.output_data if task else {}
 
-    def reset(self):
+    async def reset(self):
         self.board = CoordinationBoard()
+        self.claim_manager = TaskClaimManager()
         for agent_id in AgentId:
             self.board.agents[agent_id] = AgentStatus(agent_id=agent_id)
+        await self.ws.broadcast_board_update(self.board)
+        for agent_id in AgentId:
+            await self.ws.broadcast_agent_state(agent_id, AgentState.IDLE)
 
     def update_task_input(self, task_id: str, extra_input: dict):
         """Merge extra data into a task's input_data (used to pass output downstream)."""

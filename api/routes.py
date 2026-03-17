@@ -60,7 +60,7 @@ async def _classify_followup(gemini, original_expression: str, structured_need: 
 @router.post("/scenarios/grandmother")
 async def trigger_grandmother():
     board = get_board()
-    board.reset()
+    await board.reset()
     expression = "I'm bored, I wish I could see my grandchildren"
     board.board.user_expression = expression
     board.board.scenario_id = "grandmother"
@@ -75,7 +75,7 @@ async def trigger_grandmother():
 @router.post("/scenarios/planb")
 async def trigger_planb():
     board = get_board()
-    board.reset()
+    await board.reset()
     expression = "I have an important meeting in Chicago next Tuesday"
     board.board.user_expression = expression
     board.board.scenario_id = "planb_chicago"
@@ -116,8 +116,7 @@ async def trigger_disruption():
 @router.post("/board/reset")
 async def reset_board():
     board = get_board()
-    board.reset()
-    await board.ws.broadcast_board_update(board.board)
+    await board.reset()
     return {"status": "reset"}
 
 
