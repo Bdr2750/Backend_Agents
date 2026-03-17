@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     agent_poll_interval: float = 0.5
     host: str = "0.0.0.0"
     port: int = 8001
-    cors_origins: list[str] = ["http://localhost:5174", "http://localhost:5173", "http://localhost:3000"]
+    cors_origins: list[str] = ["*"]
 
     @property
     def gemini_api_keys(self) -> list[str]:
