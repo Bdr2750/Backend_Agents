@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     gemini_api_key_1: str = ""
     gemini_api_key_2: str = ""
     gemini_api_key_3: str = ""
-    gemini_model: str = "gemini-2.0-flash"
+    gemini_model: str = "gemini-3-flash-preview"
     agent_poll_interval: float = 0.5
     host: str = "0.0.0.0"
     port: int = 8001
