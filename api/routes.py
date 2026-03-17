@@ -191,6 +191,7 @@ async def chat(body: ChatMessage):
                 output_data={"structured_need": need, "persona": persona},
             )
             host_task.status = TaskStatus.DONE
+            host_task.version = board.board.epoch
             board.board.tasks.append(host_task)
             await board.ws.broadcast_board_update(board.board)
 
