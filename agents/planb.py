@@ -1,3 +1,4 @@
+import asyncio
 import json
 from board.models import AgentId, Task, TaskStatus
 from agents.base import BaseAgent
@@ -88,12 +89,13 @@ class PlanBAgent(BaseAgent):
             "analysis_explanation": analysis.get("explanation", ""),
         }
 
-        # 1. Recalculate Options
+        # 1 & 2. Recalculate Options + Criteria IN PARALLEL (they don't depend on each other)
         await self._broadcast_thinking(
-            "Plan B: recalculating options",
-            "Replacing invalid options with new alternatives",
+            "Plan B: recalculating options & criteria",
+            "Running options and criteria in parallel",
         )
-        options_response = await self.gemini.generate(
+
+        options_coro = self.gemini.generate(
             system_prompt=RECALCULATE_OPTIONS_PROMPT,
             user_message=(
                 f"Updated structured need:\n{json.dumps(updated_need, indent=2)}\n\n"
@@ -103,22 +105,7 @@ class PlanBAgent(BaseAgent):
                 f"Review each option. Keep valid ones, replace invalid ones with new alternatives."
             ),
         )
-        options_data = self._safe_parse_json(options_response)
-        options = options_data.get("options", options_data)
-
-        options_task = Task(
-            type="recalculate_options",
-            created_by=AgentId.PLAN_B,
-            input_data={"structured_need": updated_need, "persona": persona},
-        )
-        await self.board.add_completed_task(options_task, {"options": options})
-
-        # 2. Recalculate Criteria
-        await self._broadcast_thinking(
-            "Plan B: recalculating criteria",
-            "Adjusting evaluation framework for new constraints",
-        )
-        criteria_response = await self.gemini.generate(
+        criteria_coro = self.gemini.generate(
             system_prompt=CRITERIA_SYSTEM_PROMPT,
             user_message=(
                 f"Structured need:\n{json.dumps(updated_need, indent=2)}\n\n"
@@ -126,7 +113,19 @@ class PlanBAgent(BaseAgent):
                 f"Define the 3 most relevant criteria and their weights for this decision."
             ),
         )
+
+        options_response, criteria_response = await asyncio.gather(options_coro, criteria_coro)
+
+        options_data = self._safe_parse_json(options_response)
+        options = options_data.get("options", options_data)
         criteria_data = self._safe_parse_json(criteria_response)
+
+        options_task = Task(
+            type="recalculate_options",
+            created_by=AgentId.PLAN_B,
+            input_data={"structured_need": updated_need, "persona": persona},
+        )
+        await self.board.add_completed_task(options_task, {"options": options})
 
         criteria_task = Task(
             type="recalculate_criteria",
