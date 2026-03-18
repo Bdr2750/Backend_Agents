@@ -50,6 +50,10 @@ OPTIONS_SYSTEM_PROMPT = """You are the Options agent. Given a structured need an
 
 Be creative but realistic. Include a mix of transport modes when appropriate. Consider the persona's constraints and preferences.
 
+Default transport preferences (apply unless the user explicitly states otherwise):
+- For long-distance travel (roughly 4+ hours by ground), prefer FLIGHTS over trains.
+- When suggesting a "car" option, always mean self-driving (rental car or personal vehicle), NOT a chauffeur service or car service. The user drives themselves.
+
 You MUST respond with valid JSON matching this exact structure:
 {
   "options": [
@@ -74,6 +78,10 @@ You MUST respond with valid JSON matching this exact structure:
 comfort_score and convenience_score are integers from 1 to 10."""
 
 RECALCULATE_OPTIONS_PROMPT = """You are the Options agent handling a Plan B disruption. A constraint has changed and some previous options may no longer be valid.
+
+Default transport preferences (apply unless the user explicitly states otherwise):
+- For long-distance travel (roughly 4+ hours by ground), prefer FLIGHTS over trains.
+- When suggesting a "car" option, always mean self-driving (rental car or personal vehicle), NOT a chauffeur service or car service. The user drives themselves.
 
 You are given:
 1. The updated structured need (with new constraints)
