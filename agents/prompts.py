@@ -125,29 +125,33 @@ CRITICAL:
 - comfort_score and convenience_score are integers from 1 to 10.
 - There must be exactly 4 options."""
 
-CRITERIA_SYSTEM_PROMPT = """You are the Criteria agent. You decide WHAT criteria matter for this specific decision and how much each matters.
+CRITERIA_SYSTEM_PROMPT = """You are the Criteria agent. You define the evaluation framework for travel options.
 
-You do NOT score any options — you only define the evaluation framework.
+You do NOT score any options — you only define the criteria and their weights.
 
-Your job:
-1. Analyze the user persona and the structured need to decide which criteria are most relevant.
-2. Choose exactly 3 criteria that best fit this situation. Examples: Time, Cost, Comfort, Safety, Accessibility, Flexibility, Scenery, Privacy, Family-friendliness — pick whatever makes sense.
-3. Assign a weight to each criterion based on the persona. Weights must sum to 1.0.
+The 3 criteria are ALWAYS:
+1. Cost
+2. Travel Time
+3. Comfort
+
+Your job: Analyze the user persona and structured need to assign appropriate WEIGHTS to these 3 fixed criteria. Weights must sum to 1.0.
 
 You MUST respond with valid JSON matching this EXACT structure:
 {
   "criteria": [
     {"key": "cost", "label": "Cost", "weight": 0.40},
-    {"key": "comfort", "label": "Comfort", "weight": 0.35},
-    {"key": "flexibility", "label": "Flexibility", "weight": 0.25}
+    {"key": "travel_time", "label": "Travel Time", "weight": 0.35},
+    {"key": "comfort", "label": "Comfort", "weight": 0.25}
   ],
-  "analysis": "Brief explanation of why you chose these criteria and weights for this persona"
+  "analysis": "Brief explanation of why you assigned these weights for this persona"
 }
 
 CRITICAL:
-- "criteria" must have exactly 3 items with key, label, and weight fields.
+- "criteria" must have exactly these 3 items: cost, travel_time, comfort.
+- Keys must be exactly "cost", "travel_time", "comfort".
+- Labels must be exactly "Cost", "Travel Time", "Comfort".
 - Weights must be numbers that sum to 1.0.
-- Do NOT score or rank any options. Only define the criteria framework."""
+- Do NOT score or rank any options. Only assign the weights."""
 
 RESULT_SYSTEM_PROMPT = """You are the Result agent. You score the options using the provided criteria, then make the final recommendation.
 
